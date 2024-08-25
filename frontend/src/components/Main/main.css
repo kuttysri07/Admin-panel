@@ -34,7 +34,7 @@ label {
     color: black;
 }
 
-h1 {
+.box h1 {
     color: #001219;
     margin-bottom: 20px; /* Added margin for spacing */
     text-align: center; /* Center align heading */
@@ -96,10 +96,13 @@ h1 {
 .cardcontainer h1{
     font-size: 1.5rem;
     color: white;
-    margin-top: 30px;
+    margin-top: 20px;
+    
 }
-.cardcontainer p{
+.details p{
     font-size: 1rem;
+    
+   
 }
 
 .cardcontainer button{
@@ -116,8 +119,8 @@ h1 {
 
 .bbqimg{
     position: absolute;
-    width: 250px;
-    left: 10%;
+    width: 200px;
+    left: 15%;
     top: -20%;
 }
 
@@ -167,9 +170,9 @@ h1 {
     flex-wrap: wrap;
     gap: 30px;
     margin-top: 100px;
-    
     align-items: center;
     justify-content: center;
+   
 }
 
 .buttongrp{
