@@ -57,7 +57,7 @@ app.put("/updateImage/:id",async (req,res)=>{
     try {
       const updateImage = await productModel.findByIdAndUpdate(
         id,
-        {name,price,description , ratings,image},
+        {name,price,description , ratings},
         {new: true}
       )
       res.json(updateImage);
