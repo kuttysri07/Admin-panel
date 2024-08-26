@@ -87,6 +87,11 @@ const Main = () => {
 
   useEffect(() => {
     fetchImages();
+      const keepAlive = setInterval(() => {
+        fetch(`${API_URL}/keepalive`).catch(err => console.error('Keep alive failed:', err));
+      }, 600000); // 600,000 ms = 10 minutes
+    
+      return () => clearInterval(keepAlive);
   }, []);
 
   return (

@@ -48,8 +48,10 @@ app.get("/getImage", async (req, res) => {
     }
   });
 
-
- 
+  app.get('/keepalive', (req, res) => {
+    res.status(200).json({ message: "Server is alive" });
+  });
+  
 
 app.put("/updateImage/:id",async (req,res)=>{
     const {id} = req.params;
