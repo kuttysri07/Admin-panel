@@ -19,6 +19,7 @@ const Main = () => {
     description: '',
     ratings: '',
     image: '', // Ensure image is part of the initial state
+    category:''
   });
 
 
@@ -87,11 +88,6 @@ const Main = () => {
 
   useEffect(() => {
     fetchImages();
-      const keepAlive = setInterval(() => {
-        fetch(`${API_URL}/keepalive`).catch(err => console.error('Keep alive failed:', err));
-      }, 600000); // 600,000 ms = 10 minutes
-    
-      return () => clearInterval(keepAlive);
   }, []);
 
   return (
@@ -107,6 +103,14 @@ const Main = () => {
           <input type="text" placeholder="Enter Description" onChange={handleChange} name="description" />
           <label htmlFor="price">Price :</label>
           <input type="number" placeholder=" Enter Price" onChange={handleChange} name="price" />
+          <label htmlFor="price" >Category :</label>
+          <select name="category" id="" onChange={handleChange}>
+        
+            <option value="burger">Burger</option>
+            <option value="chicken Grill">Chicken Grill</option>
+            <option value="barbeque">Barbeque</option>
+            <option value="hotDog">HotDog</option>
+          </select>
           <label htmlFor="ratings">Ratings :</label>
           <input type="number" placeholder="Enter Ratings" onChange={handleChange} name="ratings" />
           <button disabled={uploading} className="submit" onClick={uploadHandler}>

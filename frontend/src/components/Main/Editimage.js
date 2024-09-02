@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import "./editimage.css"
 
 const API_URL = process.env.REACT_APP_API_URL;
 const EditImage = ({ item }) => {
@@ -9,6 +8,7 @@ const EditImage = ({ item }) => {
   const [price, setPrice] = useState(item.price);
   const [description, setDescription] = useState(item.description);
   const [ratings,setRatings]=useState(item.ratings)
+  const [category,setCategory]= useState(item.category);
   const updateDescription = async () => {
    
     try {
@@ -16,13 +16,14 @@ const EditImage = ({ item }) => {
         name,
         price,
         description,
-        ratings
+        ratings,
+        category
       });
       console.log('Updated successfully:', response.data);
     } catch (error) {
       console.error('Error updating product:', error);
     }
-    window.location="/";
+   
    
   };
 
@@ -42,6 +43,7 @@ const EditImage = ({ item }) => {
                 setPrice(item.price);
                 setDescription(item.description);
                 setRatings(item.ratings);
+                setCategory(item.category);
               }}></button>
             </div>
             <div className="modal-body">
@@ -52,7 +54,16 @@ const EditImage = ({ item }) => {
                 <label htmlFor="Price">Price:</label><br />
                 <input className="form-control mb-2" value={price} onChange={e => setPrice(e.target.value)} type="number" />
                 <label htmlFor="ratings">ratings</label><br />
-                <input className="form-control mb-2" value={ratings} onChange={e => setRatings(e.target.value)} type="number" />     
+                <input className="form-control mb-2" value={ratings} onChange={e => setRatings(e.target.value)} type="number" /> 
+                <label htmlFor="ratings">category</label><br />
+                <select name="category" id="" onChange={e => setCategory(e.target.value)}>
+                   
+                    <option value="burger">Burger</option>
+                    <option value="chicken grill">Chicken Grill</option>
+                    <option value="barbeque">Barbeque</option>
+                    <option value="hotdog">HotDog</option>
+                </select>   
+
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {
@@ -60,8 +71,9 @@ const EditImage = ({ item }) => {
                 setPrice(item.price);
                 setDescription(item.description);
                 setRatings(item.ratings);
+                setCategory(item.category);
               }}>Close</button>
-              <button type="button" onClick={updateDescription}>Save changes</button>
+              <button type="button" className="btn btn-primary" onClick={updateDescription}>Save changes</button>
             </div>
           </div>
         </div>
