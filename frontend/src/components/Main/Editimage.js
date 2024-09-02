@@ -59,7 +59,7 @@ const EditImage = ({ item }) => {
                 <select name="category" id="" onChange={e => setCategory(e.target.value)}>
                    
                     <option value="burger">Burger</option>
-                    <option value="chicken grill">Chicken Grill</option>
+                    <option value="chicken">Chicken Grill</option>
                     <option value="barbeque">Barbeque</option>
                     <option value="hotdog">HotDog</option>
                 </select>   

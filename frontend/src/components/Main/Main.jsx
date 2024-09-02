@@ -107,7 +107,7 @@ const Main = () => {
           <select name="category" id="" onChange={handleChange}>
         
             <option value="burger">Burger</option>
-            <option value="chicken Grill">Chicken Grill</option>
+            <option value="chicken">Chicken Grill</option>
             <option value="barbeque">Barbeque</option>
             <option value="hotDog">HotDog</option>
           </select>
