@@ -58,10 +58,10 @@ const EditImage = ({ item }) => {
                 <label htmlFor="ratings">category</label><br />
                 <select name="category" id="" onChange={e => setCategory(e.target.value)}>
                    
-                    <option value="burger">Burger</option>
-                    <option value="chicken">Chicken Grill</option>
-                    <option value="barbeque">Barbeque</option>
-                    <option value="hotdog">HotDog</option>
+                    <option value="Burger">Burger</option>
+                    <option value="Chicken">Chicken Grill</option>
+                    <option value="Barbeque">Barbeque</option>
+                    <option value="HotDog">HotDog</option>
                 </select>   
 
             </div>

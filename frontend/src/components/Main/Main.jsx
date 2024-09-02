@@ -106,10 +106,10 @@ const Main = () => {
           <label htmlFor="price" >Category :</label>
           <select name="category" id="" onChange={handleChange}>
         
-            <option value="burger">Burger</option>
-            <option value="chicken">Chicken Grill</option>
-            <option value="barbeque">Barbeque</option>
-            <option value="hotDog">HotDog</option>
+            <option value="Burger">Burger</option>
+            <option value="Chicken">Chicken Grill</option>
+            <option value="Barbeque">Barbeque</option>
+            <option value="HotDog">HotDog</option>
           </select>
           <label htmlFor="ratings">Ratings :</label>
           <input type="number" placeholder="Enter Ratings" onChange={handleChange} name="ratings" />
